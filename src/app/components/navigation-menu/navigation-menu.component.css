@@ -1,0 +1,14 @@
+.navigation-menu-inner-container button {
+  width: 23%;
+  margin: auto;
+}
+
+.navigation-menu-inner-container button i {
+  color: white;
+}
+
+.navigation-menu-outer-container {
+  background: darkorange;
+  position: fixed;
+  bottom: 0;
+}

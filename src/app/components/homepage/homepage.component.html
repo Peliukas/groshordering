@@ -1,0 +1,5 @@
+<div class="row">
+  <div class="col-12 homepage-category-slider" *ngFor="let category of categoryList">
+    <app-product-slider [categoryName]="category.name" [categoryId]="category.id"></app-product-slider>
+  </div>
+</div>

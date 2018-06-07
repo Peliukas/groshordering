@@ -1,7 +1,7 @@
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import {HttpModule} from '@angular/http';
 import {SlickModule} from 'ngx-slick';
@@ -19,13 +19,15 @@ import {NavigationMenuComponent} from './components/navigation-menu/navigation-m
 import {CategoryListComponent} from './components/category-list/category-list.component';
 import {HomepageComponent} from './components/homepage/homepage.component';
 import {ProductSliderComponent} from './components/product-slider/product-slider.component';
+import {StripHtmlPipe} from './pipes/strip-html.pipe';
+import {PurchaseFormComponent} from './components/purchase-form/purchase-form.component';
 
 const routes: Routes = [
   {path: '', component: HomepageComponent},
   {path: 'products', component: ProductListComponent},
   {path: 'products/:id', component: ProductListComponent},
   {path: 'categories', component: CategoryListComponent},
-  {path: 'product/:id', component: SingleProductComponent}
+  {path: 'product/:id', component: SingleProductComponent},
 ];
 @NgModule({
 
@@ -37,7 +39,9 @@ const routes: Routes = [
     NavigationMenuComponent,
     CategoryListComponent,
     HomepageComponent,
-    ProductSliderComponent
+    ProductSliderComponent,
+    StripHtmlPipe,
+    PurchaseFormComponent
   ],
   imports: [
     HttpModule,
@@ -47,9 +51,11 @@ const routes: Routes = [
     MatSelectModule, MatFormFieldModule, MatSidenavModule, MatGridListModule, MatListModule, MatExpansionModule,
     MatTooltipModule, MatSlideToggleModule, MatChipsModule, MatNativeDateModule, MatProgressSpinnerModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     FormsModule,
     RouterModule.forRoot(routes)
   ],
+  entryComponents: [PurchaseFormComponent],
   providers: [ApiConfigService],
   bootstrap: [AppComponent]
 })

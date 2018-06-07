@@ -1,0 +1,16 @@
+<div class="container">
+  <button mat-raised-button (click)="previousPage()">
+    Previous
+  </button>
+  <button mat-raised-button [class.current-page]="page === currentPage" *ngFor="let page of visiblePages">
+    {{page}}
+  </button>
+  <button mat-raised-button (click)="nextPage()">
+    Next
+  </button>
+  <mat-select>
+    <mat-option [value]="5">5</mat-option>
+    <mat-option [value]="10">10</mat-option>
+    <mat-option [value]="20">20</mat-option>
+  </mat-select>
+</div>

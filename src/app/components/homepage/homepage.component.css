@@ -1,0 +1,8 @@
+/deep/ .slick-next:before, /deep/ .slick-prev:before {
+  color: darkorange !important;
+}
+
+.homepage-category-slider {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}

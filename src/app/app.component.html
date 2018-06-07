@@ -1,6 +1,11 @@
+<div class="top-banner-wrapper">
+  <div class="page-title">{{currentPage}}</div>
+  <img
+    src="https://scontent-arn2-1.xx.fbcdn.net/v/t31.0-8/22218615_1554361537990547_4609378769390214671_o.jpg?_nc_cat=0&oh=ca1c71efcebb8e69e1cc569d3dcdb1f4&oe=5BB51065">
+</div>
 <section class="row">
   <div class="container">
     <router-outlet></router-outlet>
   </div>
 </section>
-<app-navigation-menu></app-navigation-menu>
+<app-navigation-menu (currentPage)="currentPage = $event"></app-navigation-menu>

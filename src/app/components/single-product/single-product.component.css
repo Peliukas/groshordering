@@ -1,0 +1,23 @@
+.category-label {
+  margin: 0px 15px 0 0;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.product-related-item-wrapper {
+  margin-left: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.add-to-cart-button {
+  border-radius: 3px;
+  background: darkorange;
+}
+
+/deep/ .add-to-cart-button .mat-button-wrapper, /deep/ .add-to-cart-button i {
+  color: white;
+}

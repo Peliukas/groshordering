@@ -1,0 +1,16 @@
+<div class="row navigation-menu-outer-container">
+  <div class="container navigation-menu-inner-container">
+    <button mat-button matTooltip="Home" [routerLink]="'/'" (click)="currentPage.emit('Home')">
+      <i class="material-icons">home</i>
+    </button>
+    <button mat-button matTooltip="Categories" [routerLink]="'categories'" (click)="currentPage.emit('Categories')">
+      <i class="material-icons">category</i>
+    </button>
+    <button mat-button matTooltip="Products" [routerLink]="'products'" (click)="currentPage.emit('Products')">
+      <i class="material-icons">list</i>
+    </button>
+    <button mat-button matTooltip="Purchase form" (click)="showPurchaseForm()">
+      <i class="material-icons">shopping_cart</i>
+    </button>
+  </div>
+</div>

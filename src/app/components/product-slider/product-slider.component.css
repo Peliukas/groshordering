@@ -1,0 +1,22 @@
+.slide-image {
+  height: 150px;
+  width: auto;
+}
+
+.slide {
+  position: relative;
+  cursor: pointer;
+}
+
+.slide-item-name {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  background: #e8e8e869;
+}
+
+.category-slider-title {
+  border-bottom: 2px solid darkorange;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,7 @@
+mat-card-content, mat-card-title {
+  text-align: center;
+}
+
+mat-card {
+  cursor: pointer;
+}

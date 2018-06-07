@@ -1,0 +1,16 @@
+<div class="row flex-center" *ngIf="!categoryProducts">
+  <mat-spinner></mat-spinner>
+</div>
+<div *ngIf="categoryProducts">
+  <h2 class="category-slider-title">{{categoryName}}</h2>
+  <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig">
+    <div ngxSlickItem *ngFor="let slide of categoryProducts" class="slide row" [routerLink]="['product', slide.id]">
+      <div class="col-12 flex-center">
+        <img class="slide-image" src="{{ slide.images[0].src }}">
+      </div>
+      <div class="slide-item-name">
+        <strong>{{slide.name}}</strong>
+      </div>
+    </div>
+  </ngx-slick>
+</div>

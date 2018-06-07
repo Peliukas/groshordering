@@ -1,0 +1,28 @@
+<mat-form-field>
+  <input matInput type="text" [formControl]="searchFieldFormControl" placeholder="Enter product name"
+         (keyup)="getProducts()">
+  <i class="material-icons" matSuffix>
+    search
+  </i>
+</mat-form-field>
+<div class="product-grid row">
+  <div class="col-3" *ngFor="let product of productList" [routerLink]="['../product', product.id]">
+    <div class="card">
+      <div class="card-image">
+        <figure>
+          <img [src]="product.images[0].src">
+        </figure>
+      </div>
+      <div class="card-content">
+        <h5 class="title is-5">
+          {{product.name}}
+        </h5>
+      </div>
+    </div>
+  </div>
+</div>
+<mat-paginator #paginator [length]="totalProductNumber"
+               [pageSize]="perPage"
+               (page)="nextPage($event)"
+               [pageSizeOptions]="[5, 10, 25, 100]">
+</mat-paginator>

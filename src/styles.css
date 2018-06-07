@@ -1,9 +1,12 @@
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import "assets/simple-grid.css";
+
+*:focus {
+  border-color: rgba(255, 140, 0, 0.71);
+}
 
 section {
   margin-bottom: 50px;
-  margin-top: 50px;
 }
 
 .flex-center {
@@ -15,6 +18,14 @@ section {
 .flex-space-between {
   display: flex;
   justify-content: space-between;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/deep/ .mat-progress-spinner circle, .mat-spinner circle {
+  stroke: rgb(181, 119, 9) !important;
 }
 
 

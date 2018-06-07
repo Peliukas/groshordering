@@ -1,0 +1,10 @@
+<div class="row">
+  <mat-card *ngFor="let category of categoryList" class="col-4" [routerLink]="['../products', category.id]">
+    <mat-card-title>{{category.name}}</mat-card-title>
+    <mat-card-content>
+      <strong>
+        {{category.count}}
+      </strong>
+    </mat-card-content>
+  </mat-card>
+</div>

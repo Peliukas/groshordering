@@ -1,0 +1,52 @@
+<mat-card>
+  <mat-card-content>
+    <div class="section">
+      <div class="row">
+        <div class="col-6">
+          <img [src]="productData.images[0].src" *ngIf="productData">
+        </div>
+        <div class="col-6" *ngIf="productData">
+          <div class="col-12">
+            <h3> {{productData.name}}</h3>
+          </div>
+          <div class="col-12">
+            <strong class="category-label" *ngFor="let category of productData.categories">
+              {{category.name}}
+            </strong>
+          </div>
+          <div class="col-12">
+            <h4>Description</h4>
+            <div [innerHTML]="productData.short_description"></div>
+          </div>
+          <div class="col-12">
+            <button mat-raised-button class="add-to-cart-button">
+              <i class="material-icons">
+                add_shopping_cart
+              </i>
+              Add to cart
+            </button>
+          </div>
+        </div>
+        <div class="col-12 flex-center" *ngIf="!relatedProductData || relatedProductData.length < 5">
+          <mat-spinner [color]="'accent'"></mat-spinner>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-content>
+    <div class="row">
+      <div class="col-12" *ngIf="relatedProductData && relatedProductData.length === 5">
+        <h3>Related products</h3>
+        <div class="flex-center">
+          <div class="product-related-item-wrapper" *ngFor="let product of relatedProductData"
+               [routerLink]="['../../product', product.id]">
+            <img [src]="product.images[0].src">
+            <strong>{{product.name}}</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
