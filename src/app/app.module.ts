@@ -11,10 +11,9 @@ import {
   MatSelectModule, MatFormFieldModule, MatSidenavModule, MatGridListModule, MatListModule, MatExpansionModule,
   MatTooltipModule, MatSlideToggleModule, MatStepperModule, MatChipsModule, MatNativeDateModule, MatProgressSpinnerModule
 } from '@angular/material';
-import {ProductListComponent} from './components/product-page/product-list.component';
+import {ProductListComponent} from './components/product-list/product-list.component';
 import {SingleProductComponent} from './components/single-product/single-product.component';
 import {ApiConfigService} from './services/api-config.service';
-import {PaginationComponent} from './components/pagination/pagination.component';
 import {NavigationMenuComponent} from './components/navigation-menu/navigation-menu.component';
 import {CategoryListComponent} from './components/category-list/category-list.component';
 import {HomepageComponent} from './components/homepage/homepage.component';
@@ -35,7 +34,6 @@ const routes: Routes = [
     AppComponent,
     ProductListComponent,
     SingleProductComponent,
-    PaginationComponent,
     NavigationMenuComponent,
     CategoryListComponent,
     HomepageComponent,

@@ -20,7 +20,7 @@ export class HomepageComponent implements OnInit {
 
   public getCategoryList() {
     this.http.get(this.apiConfig.config.baseUrl + this.apiConfig.config.apiSegment + 'products/categories?access_token=' + this.apiConfig.config.accessToken)
-      .map(res => res.json())
+      .map(res => res.json()) //converts observable object to json
       .subscribe(categoryList => {
         this.categoryList = categoryList;
       });

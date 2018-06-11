@@ -15,7 +15,6 @@ export class SingleProductComponent implements OnInit {
   public productID: any = '';
   public productData: any;
   public relatedProductData: any;
-  private baseUrl = 'http://www.remeliai.lt/';
 
   constructor(private route: ActivatedRoute, private http: Http, private apiConfig: ApiConfigService) {
   }

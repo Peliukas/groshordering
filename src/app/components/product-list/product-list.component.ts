@@ -27,7 +27,7 @@ export class ProductListComponent implements OnInit {
   }
 
   ngOnInit() {
-    let sub = this.route.params.subscribe(params => {
+    let sub = this.route.params.subscribe(params => { //service
       this.categoryId = +params['id']; // (+) converts string 'id' to a number
       this.getProducts();
     });
@@ -38,14 +38,15 @@ export class ProductListComponent implements OnInit {
       this.apiConfig.config.apiSegment + 'products' +
       '?per_page=' + this.perPage +
       '&offset=' + this.currentPage +
-      '&access_token=' + this.apiConfig.config.accessToken;
-    tempUrl += this.categoryId ? '&category=' + this.categoryId : '';
-    tempUrl += this.searchFieldFormControl.value ? '&search=' + this.searchFieldFormControl.value : '';
-    this.http.get(tempUrl).subscribe(response => {
-      this.totalProductNumber = parseInt(response.headers.get('X-WP-Total'));
-    });
-
+      '&access_token=' + this.apiConfig.config.accessToken; // create initial request url
+    tempUrl += this.categoryId ? '&category=' + this.categoryId : ''; // add category ID to request if set
+    tempUrl += this.searchFieldFormControl.value ? '&search=' + this.searchFieldFormControl.value : ''; // add search query if set
     this.http.get(tempUrl)
+      .subscribe(response => { //get total product count
+        this.totalProductNumber = parseInt(response.headers.get('X-WP-Total')); // X-WP-Total - total product count from server
+      });
+
+    this.http.get(tempUrl) // get product list
       .map(res => res.json())
       .subscribe(productList => {
         this.productList = productList;
